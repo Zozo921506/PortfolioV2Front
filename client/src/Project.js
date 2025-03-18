@@ -4,10 +4,9 @@ function Project() {
   const [displayProjects, setDisplayProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [search, setSearch] = useState("");
-  // const [projectsFound, setProjectsFound] = useState([]);
 
   const getProjects = async() => {
-    const url = "http://localhost:8000/api/projects";
+    const url = "http://51.75.122.193/api/projects";
     try
     {
       const response = await fetch(url, {
@@ -59,7 +58,7 @@ function Project() {
             <div className='project-details'>
               {selectedProject ? (
               <>
-                <img src={selectedProject.imageUrl} alt={selectedProject.name} className='selected-pic'></img>
+                <img src={"http://51.75.122.193".selectedProject.imageUrl} alt={selectedProject.name} className='selected-pic'></img>
                 <h4>Titre: {selectedProject.name}</h4>
                 <p><strong>Description:</strong> {selectedProject.description}</p>
                 <div className='project-languages'>
@@ -82,7 +81,7 @@ function Project() {
                       <>
                         {filteredProjects.map((project) => {
                           return <div key={project.id} className='project' onClick={() => setSelectedProject(project)}>
-                            <img src={`http://localhost:8000${project.imageUrl}`} alt={project.name} className='project-pic'></img>
+                            <img src={`http://51.75.122.193${project.imageUrl}`} alt={project.name} className='project-pic'></img>
                             <div className='project-value'>
                                 <p>{project.name}</p>
                                 <div className='project-languages'>

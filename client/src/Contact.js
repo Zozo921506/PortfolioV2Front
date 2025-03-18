@@ -32,7 +32,7 @@ function Contact() {
     setIsSubmitting(true);
     setLastSubmitTime(now);
 
-    const url = "http://localhost:8000/api/mail";
+    const url = "http://51.175.122.193/api/mail";
     try
     {
       const response = await fetch(url, {
