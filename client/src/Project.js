@@ -66,7 +66,7 @@ function Project() {
     {
       getProjects();
     }
-  }, []);
+  }, [errorApi, getProjects]);
   return (
     <div className='project-container'>
         <input placeholder='Rechercher des projets' onChange={(e) => inputChange(e)} value={search} id='searchbar'></input>
