@@ -30,6 +30,7 @@ function Project() {
         {
           setSelectedProject(data[0]);
         }
+        console.log(data);
       }
       else
       {
@@ -65,7 +66,7 @@ function Project() {
     {
       getProjects();
     }
-  });
+  }, []);
   return (
     <div className='project-container'>
         <input placeholder='Rechercher des projets' onChange={(e) => inputChange(e)} value={search} id='searchbar'></input>
