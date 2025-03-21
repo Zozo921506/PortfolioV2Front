@@ -32,7 +32,7 @@ function Contact() {
     setIsSubmitting(true);
     setLastSubmitTime(now);
 
-    const url = "https://51.175.122.193/api/mail";
+    const url = "https://vps-48914820.vps.ovh.net/api/mail";
     try
     {
       const response = await fetch(url, {
