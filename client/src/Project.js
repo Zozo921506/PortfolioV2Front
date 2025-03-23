@@ -32,7 +32,7 @@ function Project() {
     ];
 
     const getProjects = async() => {
-      const url = "https://vps-48914820.vs.ovh.net/api/projects";
+      const url = "https://vps-48914820.vps.ovh.net/api/projects";
       try
       {
         const response = await fetch(url, {
@@ -186,7 +186,7 @@ function Project() {
                     <>
                       {displayProjects ? displayProjects.map((project) => {
                       return <div key={project.id} className='project' onClick={() => setSelectedProject(project)}>
-                          <img src='./Image/shiona.png' alt='Shiona' className='project-pic'></img>
+                          <img src={`https://vps-48914820.vps.ovh.net${project.imageUrl}`} alt={project.name} className='project-pic'></img>
                           <div className='project-value'>
                               <p>{project.name}</p>
                               <div className='project-languages'>
