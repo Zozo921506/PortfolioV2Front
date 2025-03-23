@@ -32,7 +32,7 @@ function Project() {
     ];
 
     const getProjects = async() => {
-      const url = "https://vps-48914820.vps.ovh.net/api/projects";
+      const url = "https://vs-48914820.vps.ovh.net/api/projects";
       try
       {
         const response = await fetch(url, {
