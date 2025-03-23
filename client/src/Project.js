@@ -93,7 +93,7 @@ function Project() {
                 <>
                   {selectedProject ? (
                   <>
-                    <img src={`https://vps-48914820.vps.ovh.net"${selectedProject.imageUrl}`} alt={selectedProject.name} className='selected-pic'></img>
+                    <img src={`https://vps-48914820.vps.ovh.net${selectedProject.imageUrl}`} alt={selectedProject.name} className='selected-pic'></img>
                     <h4>Titre: {selectedProject.name}</h4>
                     <p><strong>Description:</strong> {selectedProject.description}</p>
                     <div className='project-languages'>
