@@ -782,15 +782,3 @@ form div textarea
     top: 17px;
   }
 }
-
-@media screen and (min-width:1200px) and (min-height: 970px){
-  footer, footer button, .footer-image
-  {
-    max-height: 150px;
-  }
-
-  #searchbar
-  {
-    width: 878px;
-  }
-}
