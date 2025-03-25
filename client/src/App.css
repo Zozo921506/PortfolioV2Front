@@ -619,9 +619,14 @@ form div textarea
   {
     width: 513px;
   }
+
+  *
+  {
+    cursor: none;
+  }
 }
 
-@media screen and (min-width: 1024px) and (min-height: 850px){
+@media screen and (min-width: 1024px) and (min-height: 800px){
   nav
   {
     margin-bottom: 5%;
@@ -651,11 +656,6 @@ form div textarea
   .mainscreen_button
   {
     margin-left: -70px;
-  }
-
-  *
-  {
-    cursor: none;
   }
 
   #mainscreen-image
