@@ -53,13 +53,12 @@ nav p
 
 .mainscreen
 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
 }
 
 .mainscreen_button
@@ -168,9 +167,9 @@ form div textarea
 {
   font-size: 16px;
   font-weight: bold;
-  margin-right: auto;
-  margin-left: auto;
   user-select: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-image
@@ -281,8 +280,7 @@ form div textarea
 
 .profile-container, #mainscreen-container, .contact-container, .project-container
 {
-  min-height: 80vh;
-  padding-bottom: 50px;
+  min-height: 100vh;
   user-select: none;
 }
 
@@ -309,7 +307,7 @@ form div textarea
 .project-value p
 {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 
 .project-languages
@@ -345,7 +343,6 @@ form div textarea
 .display-project
 {
   display: flex;
-  margin-left: 5%;
   justify-content: space-between;
 }
 
@@ -375,7 +372,6 @@ form div textarea
   position: fixed;
   top: 15px;
   right: 0px;
-  width: 195px;
   outline: none;
   z-index: 2;
 }
@@ -385,7 +381,79 @@ form div textarea
   outline: 1px solid#0068C9;
 }
 
-@media screen and (min-width: 768px)
+.project-name
+{
+  font-size: 14px;
+}
+
+@media screen and (min-width: 400px){
+  .footer-name
+  {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #searchbar
+  {
+    width: 195px;
+  }
+
+  .display-project
+  {
+    margin-left: 5%;
+  }
+
+  .project-name
+  {
+    font-size: 16px;
+  }
+
+  .project-value p
+  {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) and (min-height: 300px){
+  #accueil
+  {
+    width: 250px;
+  }
+
+  footer button
+  {
+    width: 100px;
+  }
+
+  .footer-image
+  {
+    width: 80px;
+  }
+
+  form
+  {
+    margin-bottom: 95px;
+  }
+
+  .project-container
+  {
+    margin-bottom: 120px;
+  }
+
+  .project-details
+  {
+    position: absolute;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  #searchbar
+  {
+    width: 380px;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-height: 768px)
 {
   nav
   {
@@ -510,6 +578,13 @@ form div textarea
     top: 55px;
   }
 
+  .project-details
+  {
+    position: fixed;
+    height: 75vh;
+    min-height: 75vh;
+  }
+
   .project-details p
   {
     font-size: 16px;
@@ -528,8 +603,25 @@ form div textarea
     font-size: 18px;
   }
 }
-@media screen and (min-width: 1024px)
-{
+
+@media screen and (min-width: 1024px) and (min-height: 768px){
+  #accueil
+  {
+    width: 275px;
+  }
+
+  footer button
+  {
+    width: 120px;
+  }
+
+  #searchbar
+  {
+    width: 513px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 850px){
   nav
   {
     margin-bottom: 5%;
@@ -647,11 +739,6 @@ form div textarea
     padding-bottom: 200px;
   }
 
-  #mainscreen-container
-  {
-    padding-bottom: 175px;
-  }
-
   .project:hover
   {
     background-color: #00509b;
@@ -693,5 +780,17 @@ form div textarea
     width: 790px;
     font-size: 19px;
     top: 17px;
+  }
+}
+
+@media screen and (min-width:1200px) and (min-height: 970px){
+  footer, footer button, .footer-image
+  {
+    max-height: 150px;
+  }
+
+  #searchbar
+  {
+    width: 878px;
   }
 }

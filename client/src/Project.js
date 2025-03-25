@@ -122,7 +122,7 @@ function Project() {
                           return <div key={project.id} className='project' onClick={() => setSelectedProject(project)}>
                             <img src={project.imageURL} alt={project.name} className='project-pic'></img>
                             <div className='project-value'>
-                                <p>{project.name}</p>
+                                <p className='project-name'>{project.name}</p>
                                 <div className='project-languages'>
                                     {project.languages.map((language) => {
                                         return <p key={language}>{language}</p>
@@ -143,7 +143,7 @@ function Project() {
                     return <div key={project.id} className='project' onClick={() => setSelectedProject(project)}>
                         <img src={project.imageURL} alt={project.name} className='project-pic'></img>
                         <div className='project-value'>
-                            <p>{project.name}</p>
+                            <p className='project-name'>{project.name}</p>
                             <div className='project-languages'>
                                 {project.languages.map((language) => {
                                     return <p key={language}>{language}</p>
@@ -167,7 +167,7 @@ function Project() {
                             return <div key={project.id} className='project' onClick={() => setSelectedProject(project)}>
                               <img src={`https://vps-48914820.vps.ovh.net${project.imageUrl}`} alt={project.name} className='project-pic'></img>
                               <div className='project-value'>
-                                  <p>{project.name}</p>
+                                  <p className='project-name'>{project.name}</p>
                                   <div className='project-languages'>
                                       {project.languages.map((language) => {
                                           return <p key={language}>{language}</p>
@@ -188,7 +188,7 @@ function Project() {
                       return <div key={project.id} className='project' onClick={() => setSelectedProject(project)}>
                           <img src={`https://vps-48914820.vps.ovh.net${project.imageUrl}`} alt={project.name} className='project-pic'></img>
                           <div className='project-value'>
-                              <p>{project.name}</p>
+                              <p className='project-name'>{project.name}</p>
                               <div className='project-languages'>
                                   {project.languages.map((language) => {
                                       return <p key={language}>{language}</p>
