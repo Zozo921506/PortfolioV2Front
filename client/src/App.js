@@ -46,11 +46,7 @@ function App() {
   return (
     <div onClick={handleClick}>
       {clicks.map((click) => (
-        <div
-          key={click.id}
-          className="click-effect"
-          style={{ top: click.y, left: click.x }}
-        ></div>
+        <div key={click.id} className="click-effect" style={{ top: click.y, left: click.x }}></div>
       ))}
       <CustomCursor />
       {screenTitle ? (
