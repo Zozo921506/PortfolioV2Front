@@ -69,7 +69,6 @@ function Project() {
   }, [errorApi]);
   return (
     <div className='project-container'>
-        <input placeholder='Rechercher des projets' onChange={(e) => inputChange(e)} value={search} id='searchbar'></input>
         <div className='display-project'>
             <div className='project-details'>
               {errorApi ? (
@@ -112,6 +111,7 @@ function Project() {
               )}
             </div>
             <div className='project-list'>
+              <input placeholder='Rechercher des projets' onChange={(e) => inputChange(e)} value={search} id='searchbar'></input>
               {errorApi ? (
                 <>
                   {search ? (

@@ -10,38 +10,31 @@ function App() {
   const [profile, setProfile] = useState(false);
   const [projects, setProjects] = useState(false);
   const [contact, setContact] = useState(false);
+  const [showTransition, setShowTransition] = useState(false);
+  const [clicks, setClicks] = useState([]);
 
-  const screenTittleButton = (e) => {
-    e.preventDefault();
-    setScreenTitle(true);
-    setProfile(false);
-    setProjects(false);
-    setContact(false);
-  }
+  const handlePageChange = (newPage) => {
+    setShowTransition(true);
+    setTimeout(() => {
+      setScreenTitle(newPage === "home");
+      setProfile(newPage === "profile");
+      setProjects(newPage === "projects");
+      setContact(newPage === "contact");
+      setShowTransition(false);
+    }, 600);
+  };
 
-  const profileButton = (e) => {
-    e.preventDefault();
-    setScreenTitle(false);
-    setProfile(true);
-    setProjects(false);
-    setContact(false);
-  }
-
-  const projectsButton = (e) => {
-    e.preventDefault();
-    setScreenTitle(false);
-    setProfile(false);
-    setProjects(true);
-    setContact(false);
-  }
-
-  const contactButton = (e) => {
-    e.preventDefault();
-    setScreenTitle(false);
-    setProfile(false);
-    setProjects(false);
-    setContact(true);
-  }
+  const handleClick = (e) => {
+    const newClick = {
+      id: Date.now(),
+      x: e.clientX,
+      y: e.clientY,
+    };
+    setClicks((prev) => [...prev, newClick]);
+    setTimeout(() => {
+      setClicks((prev) => prev.filter((click) => click.id !== newClick.id));
+    }, 400);
+  };
 
   useEffect(() => {
     if (!screenTitle && !profile && !projects && !contact)
@@ -51,7 +44,14 @@ function App() {
 
   }, [screenTitle, profile, projects, contact]);
   return (
-    <div>
+    <div onClick={handleClick}>
+      {clicks.map((click) => (
+        <div
+          key={click.id}
+          className="click-effect"
+          style={{ top: click.y, left: click.x }}
+        ></div>
+      ))}
       <CustomCursor />
       {screenTitle ? (
         <div id='mainscreen-container'>
@@ -62,9 +62,9 @@ function App() {
           <div className='mainscreen'>
             <div id='portfolio'>Portfolio</div>
             <div className='mainscreen_button'>
-              <button onClick={(e) => profileButton(e)}>Profil</button>
-              <button onClick={(e) => projectsButton(e)}>Projets</button>
-              <button onClick={(e) => contactButton(e)}>Contact</button>
+              <button onClick={(e) => handlePageChange('profile')}>Profil</button>
+              <button onClick={(e) => handlePageChange('projects')}>Projets</button>
+              <button onClick={(e) => handlePageChange('contact')}>Contact</button>
             </div>
           </div>
         </div>
@@ -72,37 +72,40 @@ function App() {
         <>
           {profile ? (
             <>
+              {showTransition && <div className="circle-transition"></div>}
               <Profile />
               <footer>
-                <button onClick={(e) => screenTittleButton(e)} id='accueil'>Accueil</button>
-                <button onClick={(e) => projectsButton(e)}>Projets</button>
-                <button onClick={(e) => contactButton(e)}>Contact</button>
+                <button onClick={(e) => handlePageChange('home')} id='accueil'>Accueil</button>
+                <button onClick={(e) => handlePageChange('projects')}>Projets</button>
+                <button onClick={(e) => handlePageChange('contact')}>Contact</button>
                 <img src='./Image/Falla_Enzo_pic.png' alt='Profil' className='footer-image'></img>
                 <p className="footer-name">Falla Enzo</p>
               </footer>
             </>
           ) : projects ? (
             <>
+              {showTransition && <div className="circle-transition"></div>}
               <Project />
               <footer>
-                <button onClick={(e) => screenTittleButton(e)} id='accueil'>Accueil</button>
-                <button onClick={(e) => profileButton(e)}>Profil</button>
-                <button onClick={(e) => contactButton(e)}>Contact</button>
+                <button onClick={(e) => handlePageChange('home')} id='accueil'>Accueil</button>
+                <button onClick={(e) => handlePageChange('profile')}>Profil</button>
+                <button onClick={(e) => handlePageChange('contact')}>Contact</button>
                 <img src='./Image/Falla_Enzo_pic.png' alt='Profil' className='footer-image'></img>
                 <p className="footer-name">Falla Enzo</p>
               </footer>
             </>
           ) : contact ? (
             <>
-            <Contact />
-            <footer>
-              <button onClick={(e) => screenTittleButton(e)} id='accueil'>Accueil</button>
-              <button onClick={(e) => profileButton(e)}>Profil</button>
-              <button onClick={(e) => projectsButton(e)}>Projets</button>
-              <img src='./Image/Falla_Enzo_pic.png' alt='Profil' className='footer-image'></img>
-              <p className="footer-name">Falla Enzo</p>
-            </footer>
-          </>
+              {showTransition && <div className="circle-transition"></div>}
+              <Contact />
+              <footer>
+                <button onClick={(e) => handlePageChange('home')} id='accueil'>Accueil</button>
+                <button onClick={(e) => handlePageChange('profile')}>Profil</button>
+                <button onClick={(e) => handlePageChange('projects')}>Projets</button>
+                <img src='./Image/Falla_Enzo_pic.png' alt='Profil' className='footer-image'></img>
+                <p className="footer-name">Falla Enzo</p>
+              </footer>
+            </>
           ) : (
             <>
               <p>Loading ...</p>
