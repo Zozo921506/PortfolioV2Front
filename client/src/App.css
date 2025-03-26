@@ -664,10 +664,10 @@ form div textarea
     width: 513px;
   }
 
-  /* *
+  *
   {
     cursor: none;
-  } */
+  }
 }
 
 @media screen and (min-width: 1024px) and (min-height: 800px){
