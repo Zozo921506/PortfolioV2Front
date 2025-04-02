@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [lastSubmitTime, setLastSubmitTime] = useState(null);
-  const [formData, setFormData] = useState(
-    {
-      from: '',
-      subject: '',
-      message: '',
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [formData, setFormData] = useState({
+    from: '',
+    subject: '',
+    message: '',
+  });
 
+  useEffect(() => {
+    if (lastSubmitTime) {
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const remainingTime = Math.max(60 - Math.floor((now - lastSubmitTime) / 1000), 0);
+        setTimeLeft(remainingTime);
+        if (remainingTime === 0) {
+          clearInterval(interval);
+        }
+      }, 1000);
+
+      return () => clearInterval(interval);
     }
-  );
+  }, [lastSubmitTime]);
 
   const change = (e) => {
     const { name, value } = e.target;
     setFormData({
-      ...formData, [name]: value
+      ...formData,
+      [name]: value,
     });
   };
 
@@ -23,8 +37,7 @@ function Contact() {
     e.preventDefault();
 
     const now = new Date().getTime();
-    if (lastSubmitTime && now - lastSubmitTime < 60000) 
-    {
+    if (lastSubmitTime && now - lastSubmitTime < 60000) {
       alert("Veuillez attendre avant de renvoyer un message.");
       return;
     }
@@ -33,46 +46,43 @@ function Contact() {
     setLastSubmitTime(now);
 
     const url = "https://vps-48914820.vps.ovh.net/api/mail";
-    try
-    {
+    try {
       const response = await fetch(url, {
         method: 'POST',
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
-      if (response.ok)
-      {
+      if (response.ok) {
         alert("Email envoyé");
         setIsSubmitting(false);
       }
-      else
-      {
+      else {
         console.log("Une erreur est survenue");
       }
     }
-    catch (e)
-    {
+    catch (e) {
       console.error(e);
     }
-  } 
+  };
 
   return (
     <div className="contact-container">
-      <form onSubmit={(e) => sendEmail(e)}>
+      <form onSubmit={sendEmail}>
         <h2>Me contacter</h2>
         <div>
           <label htmlFor="from">Email :</label>
-          <input type="email" placeholder="Votre adresse mail" onChange={(e) => change(e)} name="from" id="from" required />
+          <input type="email" placeholder="Votre adresse mail" onChange={change} name="from" id="from" required />
         </div>
         <div>
           <label htmlFor="subject">Objet :</label>
-          <input placeholder="Objet" onChange={(e) => change(e)} name="subject" id="subject" />
+          <input placeholder="Objet" onChange={change} name="subject" id="subject" />
         </div>
         <div>
           <label htmlFor="message">Message :</label>
-          <textarea placeholder="Votre message" onChange={(e) => change(e)} name="message" id="message" required />
+          <textarea placeholder="Votre message" onChange={change} name="message" id="message" required />
         </div>
-        <button disabled={isSubmitting} id="send">Envoyer</button>
+        <button disabled={isSubmitting || timeLeft > 0} id="send">Envoyer</button>
+        {timeLeft > 0 && <p>Veuillez patienter {timeLeft} secondes avant d'envoyer un nouveau message.</p>}
       </form>
     </div>
   );
