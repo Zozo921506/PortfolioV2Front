@@ -1,5 +1,4 @@
-body
-{
+body {
   background-color: black;
   color: white;
   margin: 0;
@@ -7,34 +6,30 @@ body
   font-family: Inter, sans-serif;
 }
 
-button
-{
+button {
   background-color: #0068C9;
   color: white;
 }
 
-button:hover, .mainscreen_button button:hover
-{
+button:hover,
+.mainscreen_button button:hover {
   background-color: #00509b;
 }
 
-nav
-{
+nav {
   margin-bottom: 60%;
   display: flex;
   align-items: center;
 }
 
-nav p
-{
+nav p {
   font-size: 20px;
   margin-left: 3%;
   font-weight: bold;
   user-select: none;
 }
 
-#portfolio
-{
+#portfolio {
   width: 175px;
   height: 175px;
   line-height: 175px;
@@ -51,8 +46,7 @@ nav p
   user-select: none;
 }
 
-.mainscreen
-{
+.mainscreen {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -61,8 +55,7 @@ nav p
   align-items: center;
 }
 
-.mainscreen_button
-{
+.mainscreen_button {
   display: flex;
   flex-direction: column;
   margin-left: -40px;
@@ -70,8 +63,7 @@ nav p
   z-index: 1
 }
 
-.mainscreen_button button
-{
+.mainscreen_button button {
   padding: 10px 30px;
   margin-bottom: 10px;
   border: none;
@@ -89,8 +81,7 @@ nav p
   overflow: hidden;
 }
 
-footer
-{
+footer {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -100,8 +91,7 @@ footer
   text-align: center;
 }
 
-footer button
-{
+footer button {
   font-size: 13px;
   height: 65px;
   width: 65px;
@@ -109,8 +99,7 @@ footer button
   font-weight: bold;
 }
 
-form
-{
+form {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -118,22 +107,19 @@ form
   margin-right: 20%;
 }
 
-form div
-{
+form div {
   display: flex;
   text-align: left;
   flex-direction: column;
   margin-bottom: 10%;
 }
 
-form div label
-{
+form div label {
   margin-bottom: 5%;
   font-size: 20;
 }
 
-#send
-{
+#send {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -141,30 +127,25 @@ form div label
   font-weight: bold;
 }
 
-form h2
-{
+form h2 {
   margin-bottom: 25%;
 }
 
-form div input
-{
+form div input {
   height: 30px;
 }
 
-form div textarea
-{
+form div textarea {
   height: 100px;
   resize: none;
 }
 
-#accueil
-{
+#accueil {
   border: none;
   width: 100px;
 }
 
-.footer-name
-{
+.footer-name {
   font-size: 16px;
   font-weight: bold;
   user-select: none;
@@ -172,26 +153,22 @@ form div textarea
   margin: 0;
 }
 
-.footer-image
-{
+.footer-image {
   width: 65px;
   height: 65px;
 }
 
-#mainscreen-image
-{
+#mainscreen-image {
   width: 100px;
   height: auto;
 }
 
-.profile-image
-{
+.profile-image {
   border-radius: 50%;
   width: 100%;
 }
 
-#profil-top
-{
+#profil-top {
   width: 190px;
   margin-bottom: 10%;
   text-align: center;
@@ -201,8 +178,7 @@ form div textarea
   margin-right: auto;
 }
 
-.profile-content
-{
+.profile-content {
   margin-left: 10%;
   margin-bottom: 15%;
   margin-right: 10%;
@@ -210,22 +186,19 @@ form div textarea
   flex-direction: column;
 }
 
-#resume
-{
+#resume {
   color: white;
   text-decoration: none;
 }
 
-.profile-skill
-{
+.profile-skill {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
 }
 
-.grid-skills
-{
+.grid-skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
@@ -233,14 +206,12 @@ form div textarea
   margin-right: auto;
 }
 
-.skill-center
-{
+.skill-center {
   text-align: center;
   width: 100%;
 }
 
-.grid-language
-{
+.grid-language {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -249,43 +220,39 @@ form div textarea
   margin-bottom: 25%;
 }
 
-.profile-hobbies
-{
+.profile-hobbies {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.profile-pics
-{
+.profile-pics {
   width: 50px;
 }
 
-.hobby
-{
+.hobby {
   text-align: center;
   width: 100%;
   font-size: 11px;
 }
 
-.skill-category
-{
+.skill-category {
   margin-bottom: 10%;
 }
 
-.title
-{
+.title {
   margin-bottom: 20%;
 }
 
-.profile-container, #mainscreen-container, .contact-container, .project-container
-{
+.profile-container,
+#mainscreen-container,
+.contact-container,
+.project-container {
   min-height: 100vh;
   user-select: none;
 }
 
-.project
-{
+.project {
   display: flex;
   align-items: center;
   width: 100%;
@@ -295,8 +262,7 @@ form div textarea
   height: 70px;
 }
 
-.project-value
-{
+.project-value {
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -304,34 +270,29 @@ form div textarea
   width: 100%;
 }
 
-.project-value p
-{
+.project-value p {
   margin: 0;
   margin-bottom: 3px;
 }
 
-.project-languages
-{
+.project-languages {
   display: flex;
   gap: 4%;
   flex-wrap: wrap;
-  font-size: 9px; 
+  font-size: 9px;
 }
 
-.project-languages p 
-{
+.project-languages p {
   white-space: nowrap;
 }
 
-.project-pic
-{
+.project-pic {
   width: 70px;
   margin-right: 2%;
   height: 70px;
 }
 
-.project-details
-{
+.project-details {
   width: 45%;
   background-color: #252525;
   position: fixed;
@@ -340,32 +301,27 @@ form div textarea
   top: 50px;
 }
 
-.display-project
-{
+.display-project {
   display: flex;
   justify-content: space-between;
 }
 
-.project-list
-{
+.project-list {
   width: 55%;
   margin-left: 50%;
   position: relative;
   top: 50px
 }
 
-.project-details p
-{
+.project-details p {
   font-size: 14px;
 }
 
-.selected-pic
-{
+.selected-pic {
   width: 100%;
 }
 
-#searchbar
-{
+#searchbar {
   color: white;
   background-color: #252525;
   border: none;
@@ -376,18 +332,15 @@ form div textarea
   z-index: 2;
 }
 
-#searchbar:focus
-{
+#searchbar:focus {
   outline: 1px solid#0068C9;
 }
 
-.project-name
-{
+.project-name {
   font-size: 14px;
 }
 
-.circle-transition 
-{
+.circle-transition {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -399,17 +352,14 @@ form div textarea
   animation: circleExpand 0.6s ease-out forwards;
 }
 
-@keyframes circleExpand
-{
-  to
-  {
+@keyframes circleExpand {
+  to {
     transform: translate(-50%, -50%) scale(50);
     opacity: 0;
   }
 }
 
-.click-effect
-{
+.click-effect {
   position: fixed;
   width: 20px;
   height: 20px;
@@ -421,96 +371,78 @@ form div textarea
   z-index: 100;
 }
 
-@keyframes clickExpand
-{
-  to
-  {
+@keyframes clickExpand {
+  to {
     transform: scale(3);
     opacity: 0.3;
   }
 }
 
-@media screen and (min-width: 400px){
-  .footer-name
-  {
+@media screen and (min-width: 400px) {
+  .footer-name {
     margin-right: auto;
     margin-left: auto;
   }
 
-  #searchbar
-  {
+  #searchbar {
     width: 195px;
   }
 
-  .display-project
-  {
+  .display-project {
     margin-left: 5%;
   }
 
-  .project-name
-  {
+  .project-name {
     font-size: 16px;
   }
 
-  .project-value p
-  {
+  .project-value p {
     margin-bottom: 10px;
   }
 }
 
-@media screen and (min-width: 600px) and (min-height: 300px){
-  #accueil
-  {
+@media screen and (min-width: 600px) and (min-height: 300px) {
+  #accueil {
     width: 250px;
   }
 
-  footer button
-  {
+  footer button {
     width: 100px;
   }
 
-  .footer-image
-  {
+  .footer-image {
     width: 80px;
   }
 
-  form
-  {
+  form {
     margin-bottom: 95px;
   }
 
-  .project-container
-  {
+  .project-container {
     margin-bottom: 120px;
   }
 
-  .project-details
-  {
+  .project-details {
     position: absolute;
     height: auto;
     min-height: 100vh;
   }
 
-  #searchbar
-  {
+  #searchbar {
     width: 380px;
   }
 }
 
-@media screen and (min-width: 768px) and (min-height: 768px)
-{
-  nav
-  {
+@media screen and (min-width: 768px) and (min-height: 768px) {
+  nav {
     margin-bottom: 30%;
   }
 
-  nav p
-  {
+  nav p {
     margin-left: 2%;
   }
 
-  #portfolio
-  {
+  #portfolio {
     width: 375px;
     height: 375px;
     line-height: 375px;
@@ -518,171 +450,144 @@ form div textarea
     border: 12px solid white;
   }
 
-  .mainscreen_button button
-  {
+  .mainscreen_button button {
     padding: 12px 140px;
     margin-bottom: 17px;
     font-size: 25px;
   }
 
-  footer button
-  {
+  footer button {
     width: 100px;
     height: 100px;
     font-size: 25px;
   }
 
-  #accueil
-  {
+  #accueil {
     width: 250px;
   }
 
-  .footer-name
-  {
+  .footer-name {
     font-size: 25px;
   }
 
-  .footer-image
-  {
+  .footer-image {
     width: 100px;
     height: 100px;
   }
 
-  #mainscreen-image
-  {
+  #mainscreen-image {
     width: 125px;
   }
 
-  #profil-top
-  {
+  #profil-top {
     width: 250px;
   }
 
-  .profile-skill
-  {
+  .profile-skill {
     flex-direction: row;
   }
 
-  .grid-skills
-  {
+  .grid-skills {
     width: 90%;
   }
 
-  .profile-pics
-  {
+  .profile-pics {
     width: 70px;
   }
 
-  .hobby
-  {
+  .hobby {
     font-size: 16px;
   }
 
-  .profile-content
-  {
+  .profile-content {
     margin-bottom: 7%;
   }
 
-  .profile-container, .contact-container, .project-container
-  {
+  .profile-container,
+  .contact-container,
+  .project-container {
     padding-bottom: 60px;
   }
 
-  .project
-  {
+  .project {
     margin-bottom: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
   }
 
-  .project-value p
-  {
+  .project-value p {
     margin-bottom: 15px;
   }
 
-  .project-pic
-  {
+  .project-pic {
     width: 80px;
     height: 80px;
   }
 
-  .selected-pic
-  {
+  .selected-pic {
     height: 200px;
   }
 
-  .project-languages
-  {
+  .project-languages {
     font-size: 12px;
     gap: 2%;
   }
 
-  .project-list, .project-details
-  {
+  .project-list,
+  .project-details {
     top: 55px;
   }
 
-  .project-details
-  {
+  .project-details {
     position: fixed;
     height: 75vh;
     min-height: 75vh;
   }
 
-  .project-details p
-  {
+  .project-details p {
     font-size: 16px;
     margin-bottom: 20%;
   }
 
-  .project-details h4
-  {
+  .project-details h4 {
     margin-bottom: 20%;
   }
 
-  #searchbar
-  {
+  #searchbar {
     top: 20px;
     width: 384px;
     font-size: 18px;
   }
 }
 
-@media screen and (min-width: 1024px) and (min-height: 768px){
-  #accueil
-  {
+@media screen and (min-width: 1024px) and (min-height: 768px) {
+  #accueil {
     width: 275px;
   }
 
-  footer button
-  {
+  footer button {
     width: 120px;
   }
 
-  #searchbar
-  {
+  #searchbar {
     width: 513px;
   }
 
-  *
-  {
+  * {
     cursor: none;
   }
 }
 
-@media screen and (min-width: 1024px) and (min-height: 800px){
-  nav
-  {
+@media screen and (min-width: 1024px) and (min-height: 800px) {
+  nav {
     margin-bottom: 5%;
   }
 
-  nav p
-  {
+  nav p {
     margin-left: 1%;
   }
 
-  #portfolio
-  {
+  #portfolio {
     width: 475px;
     height: 475px;
     line-height: 475px;
@@ -690,142 +595,118 @@ form div textarea
     border: 15px solid white;
   }
 
-  .mainscreen_button button
-  {
+  .mainscreen_button button {
     padding: 16px 200px;
     margin-bottom: 30px;
     font-size: 40px;
   }
 
-  .mainscreen_button
-  {
+  .mainscreen_button {
     margin-left: -70px;
   }
 
-  #mainscreen-image
-  {
+  #mainscreen-image {
     width: 150px;
   }
 
-  form h2
-  {
+  form h2 {
     margin-bottom: 5%;
   }
 
-  form div
-  {
+  form div {
     margin-bottom: 4%;
   }
 
-  form div label
-  {
+  form div label {
     margin-bottom: 1%;
   }
 
-  form div textarea
-  {
+  form div textarea {
     height: 175px;
   }
 
-  #send
-  {
+  #send {
     width: 30%;
     padding: 1%;
     font-size: 20px;
   }
 
-  footer
-  {
+  footer {
     max-height: 125px;
   }
 
-  footer button
-  {
+  footer button {
     width: 225px;
     height: 125px;
     font-size: 35px;
   }
 
-  #accueil
-  {
+  #accueil {
     width: 425px;
   }
 
-  .footer-name
-  {
+  .footer-name {
     font-size: 35px;
   }
 
-  .footer-image
-  {
+  .footer-image {
     width: 125px;
     height: 125px;
   }
 
-  #profil-top
-  {
+  #profil-top {
     width: 275px;
     margin-bottom: 5%;
   }
 
-  .profile-content
-  {
+  .profile-content {
     margin-bottom: 5%;
   }
 
-  .profile-pics
-  {
+  .profile-pics {
     width: 100px;
   }
 
-  .grid-skills
-  {
+  .grid-skills {
     width: 75%;
   }
 
-  .profile-container, .contact-container, .project-container
-  {
+  .profile-container,
+  .contact-container,
+  .project-container {
     padding-bottom: 200px;
   }
 
-  .project:hover
-  {
+  .project:hover {
     background-color: #00509b;
   }
 
-  .selected-pic
-  {
-    height: 300px;
+  .selected-pic {
+    height: 275px;
   }
 
-  .project-details
-  {
+  .project-details {
     width: 35%;
   }
 
-  .project-details p
-  {
+  .project-details p {
     margin-bottom: 5%;
   }
 
-  .project-details h4
-  {
+  .project-details h4 {
     margin-bottom: 5%;
   }
 
-  .project-languages
-  {
+  .project-languages {
     font-size: 14px;
     gap: 1%;
   }
 
-  .project-list
-  {
+  .project-list {
     margin-left: 55%;
   }
 
-  #searchbar
-  {
+  #searchbar {
     width: 790px;
     font-size: 19px;
     top: 17px;
