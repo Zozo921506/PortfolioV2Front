@@ -150,7 +150,8 @@ form div textarea {
   font-weight: bold;
   user-select: none;
   padding: 0;
-  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .footer-image {
@@ -379,11 +380,6 @@ form div textarea {
 }
 
 @media screen and (min-width: 400px) {
-  .footer-name {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   #searchbar {
     width: 195px;
   }
